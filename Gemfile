@@ -68,3 +68,6 @@ end
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'byebug'
+gem 'faker'
+gem 'sidekiq', '~> 7.2'
+gem 'sidekiq-scheduler', '~> 5.0'
