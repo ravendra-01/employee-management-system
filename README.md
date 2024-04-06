@@ -19,7 +19,7 @@
 ##### 1. Check out the repository
 
 ```bash
-git clone https://github.com/ravendra-01/scrape_amazon_product_info.git
+git clone https://github.com/ravendra-01/employee-management-system.git
 ```
 
 ##### 2. Create and setup the database
