@@ -5,7 +5,19 @@
       <%= notice %>
     </div>
   <% end %>
-  <%= link_to 'New Employee', new_employee_path, class: 'btn btn-primary mb-4' %>
+  <div class='row'>
+    <div class='col-lg-6 mx-auto'>
+      <%= link_to 'New Employee', new_employee_path, class: 'btn btn-primary mb-4' %>
+    </div>
+    <div class='col-lg-6 mx-auto'>
+      <div class="d-flex justify-content-end">
+        <h5>Select Department:</h5>
+        <%= form_with(url: employees_path, method: :get) do %>
+          <%= select_tag :department, options_for_select(Employee.pluck(:department).uniq, params[:department]), include_blank: true, onchange: "this.form.submit();", class:'form-select ms-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>

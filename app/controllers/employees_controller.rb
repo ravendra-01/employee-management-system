@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
   before_action :get_employee, only: %i[ edit update destroy ]
 
   def index
-    @employees = Employee.all
+    @employees = params[:department].present? ? Employee.where(department: params[:department]) : Employee.all
   end
 
   def new

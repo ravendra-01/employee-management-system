@@ -1,24 +1,58 @@
-# README
+## About
+    This is a Employee Management System project with ability to import employee data from an external API and process it in the background.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Features
 
-Things you may want to cover:
+    - Implemented dashboard to manage employees 
+    - Implemented API to generate list of employees that returns JSON data
+    - Implemented background job using Sidekiq to to import employee data from external API and create employess
+    - Added tests using RSpec.
 
-* Ruby version
+#### Prerequisites
 
-* System dependencies
+- ruby 3.2.2
+- rails 7.0.8
+- Node 18+, and Yarn 1.x
 
-* Configuration
+#### Install
 
-* Database creation
+##### 1. Check out the repository
 
-* Database initialization
+```bash
+git clone https://github.com/ravendra-01/scrape_amazon_product_info.git
+```
 
-* How to run the test suite
+##### 2. Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to install gems.
 
-* Deployment instructions
+```ruby
+bundle install
+```
 
-* ...
+##### 3. Create and setup the database
+
+Run the following commands to create and setup the database.
+
+```ruby
+rails db:create db:migrate db:seed
+```
+
+##### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+rails s
+```
+##### 5. To Run Background Jobs
+
+start redis server and then run
+
+```ruby
+bundle exe sidekiq
+```
+
+And now you can visit the site with the URL http://localhost:3000
+
+API to generate list of employees: http://localhost:3000/generate_emp_detail 
